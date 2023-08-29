@@ -20,7 +20,7 @@ const Hero = () => {
                         demandadas en el mejor lugar
                     </h1>
                     <h5>
-                        Registrate y obten un descuento especial
+                        Registrate y mejora tus posibilidades laborales
                     </h5>
                     <button className='w-1/2 px-4 py-2 bg-[#4E4FEB] hover:bg-[#393ab3] rounded-lg text-[#EEEEEE] hover:text-white'>
                         <Link to="/register">
