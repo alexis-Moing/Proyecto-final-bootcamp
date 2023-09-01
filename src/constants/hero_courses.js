@@ -4,7 +4,7 @@
 export const heroCourses = [
     {
         id:1,
-        curso: "Excel",
+        curso: "Excel basico",
         docente: "Alexis Ramirez",
         precio: "34.90",
         descripcion: "Descripción Imaginemos esta situación: trabajas en una oficina y en tu día a día realizas operaciones básicas de Excel. Ya sabes cómo hacer una base de datos y dominas algunas funciones avanzadas de Excel. Sin embargo, conoces lo suficiente como para entender que el mundo de Excel tiene mucho para ofrecer. Has oído hablar del lenguaje de programación Visual Basic pero, de un momento a otro, puedes necesitar saber cómo hacer tablas dinámicas en Excel, y que tal vez, ese saber sea decisivo a la hora de conseguir un ascenso o bien para conseguir un nuevo empleo. Con este curso de Excel online aprenderás a manipular una cantidad gigantesca de información y a mejorar el manejo de datos usando el lenguaje de programación Visual Basic. En su curso de Excel avanzado, Valentín Rodríguez, profesor con más de veinte años de experiencia en gestión de empresas, te enseñará de forma clara y práctica qué es una tabla dinámica, cómo crear una tabla dinámica sobre una base de datos de Access y de Excel. Además, aprenderás qué es una Macro, qué variables intervienen en él, qué es Visual Basic y sus operadores básicos mediante juegos que harán que el aprendizaje sea claro y sencillo.",
