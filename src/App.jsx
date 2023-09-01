@@ -15,43 +15,47 @@ const App = () => {
   const [total, setTotal] = useState(0)
   const [countCourses, setCountCourses] = useState(0)
 
+  const agregarcarrito = (inforecibida) => {
+    const precioNumerico = parseFloat(inforecibida.precio.replace(',', '.')); // Convierte la cadena en un número
+    setAllCourses((prevCourses) => [...prevCourses, inforecibida]);
+    setTotal((prevTotal) => (parseFloat(prevTotal) + precioNumerico).toFixed(2)); // Sumar el precio del curso al total
+    //20.32
+    setCountCourses((prevCount) => prevCount + 1); // Incrementar la cantidad de cursos en 1
+    console.log(allcourses);
+  }
 
   return (
     <>
 
-    <BrowserRouter>
-      <Header>
-          <Routes>
-            
-            <Route path="/" element ={<Home/>} />
-            <Route path="/login" element ={<Login/>} />
-            <Route path="/register" element ={<Register/>} />
-            <Route path="*" element={<Error404 />} />
-            
-            <Route 
-              path="/carrito" 
-              element ={<Carrito/>}
-              allcourses={allcourses}
-              setAllCourses={setAllCourses}
-              total={total}
-              setTotal={setTotal}
-              countCourses={countCourses}
-              setCountCourses={setCountCourses}/>
+      <BrowserRouter>
+        <Header
+          allcourses={allcourses}
+          countCourses={countCourses}
+          total={total}
+        />
 
-            <Route 
-              path="/cursoDetalle/:cursoId" 
-              Component={CursoDetalle} 
-              allcourses={allcourses}
-              setAllCourses={setAllCourses}
-              total={total}
-              setTotal={setTotal}
-              countCourses={countCourses}
-              setCountCourses={setCountCourses}/>
-          </Routes>
-          
-          <Footer />
-      </Header>
-    </BrowserRouter>
+        <Routes>
+
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<Error404 />} />
+
+          <Route
+            path="/carrito"
+            element={<Carrito allcourses={allcourses} />}
+          />
+
+          <Route
+            total={total}
+            element={<CursoDetalle agregarcarritofunction={agregarcarrito} />}
+            path="/cursoDetalle/:cursoId"
+          />
+        </Routes>
+
+        <Footer />
+
+      </BrowserRouter>
     </>
   )
 }
