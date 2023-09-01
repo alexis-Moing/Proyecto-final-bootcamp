@@ -115,7 +115,7 @@ console.log(name, lastname, email, password, confirmpassword)
 
     <div>
         <button 
-        className="mt-6 bg-sky-600 text-white w-full py-2 px-6 rounded-lg hover:scale-105 bg-sky-800 transition-all mb-6">Crear Cuenta</button>
+        className="mt-6 text-white w-full py-2 px-6 rounded-lg hover:scale-105 bg-sky-800 transition-all mb-6">Crear Cuenta</button>
     </div>
 
   </form>
