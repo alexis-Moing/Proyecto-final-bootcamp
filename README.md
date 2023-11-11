@@ -3,4 +3,3 @@
 
 Integrantes: 
 - Alexis Morales
-- Michaell de la Cruz
