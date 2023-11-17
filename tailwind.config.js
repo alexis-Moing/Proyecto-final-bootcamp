@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-fondo': "url('./src/assets/fondo2.jpg')"
+      }
+    },
   },
   plugins: [
     require('tailwindcss-animated')

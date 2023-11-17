@@ -9,35 +9,32 @@ import IconLogo from '../components/home_components/header/IconLogo'
 const Footer = () => {
   return (
     <>
-        <footer className='w-full bg-[#000000] px-24 py-7 flex flex-col text-[#EEEEEE]'>
+        <footer className=' bg-[#181818] px-12 py-7 flex flex-col text-[#EEEEEE]'>
 
-            <div className='flex justify-evenly'>
-                <div className='w-1/3 flex flex-col gap-2 text-center'>
-                    <h6 className='font-bold text-md'>Nosotros</h6>
-                    <a className='text-sm' href="">Historia</a>
-                    <a className='text-sm' href="">Mision</a>
-                    <a className='text-sm' href="">Vision</a>
+            <h1 className='font-extrabold flex justify-center pb-4'>CINEPLUS</h1>
+
+            <div className=''>
+                <div className=' flex gap-8 justify-center'>
+                    <h6 className='text-sm'>Condiciones de uso</h6>
+                    <a className='text-sm' href="">Privacidad</a>
+                    <a className='text-sm' href="">Anuncios de prensa</a>
                 </div>
 
-                <div className='w-1/3 flex flex-col gap-2 text-center'>
-                    <h6 className='font-bold text-md'>Soluciones</h6>
-                    <a className='text-sm' href="">Cursos</a>
-                    <a className='text-sm' href="">Bolsa de trabajo</a>
-                    <a className='text-sm' href="">Capacitaciones</a>
+                <div className=' flex gap-8 pt-4 justify-center'>
+                    <h6 className='text-sm'>Contactos de prensa</h6>
+                    <a className='text-sm' href="">Gestionar preferencias</a>
+                </div>
+                <div className='flex justify-center text-sm pt-4'>
+                    <p className=''>@ 2023 CINEPLUS Direct Latin America. Todos los derechos reservados</p>
                 </div>
 
-                <div className='w-1/3 flex flex-col gap-2 text-center'>
-                    <h6 className='font-bold text-md'>Contacto</h6>
+                <div className='flex'>
                     <IconFacebook />
                     <IconLinkedin />
                     <IconTwitter />
                 </div>
             </div>
 
-            <div className='flex gap-5 justify-center'>
-                <IconLogo />
-                <span className='my-auto text-slate-700'>Cursapp 2023 - Todos los derechos reservados</span>
-            </div>
         </footer>
     </>
   )

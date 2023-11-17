@@ -2,15 +2,15 @@ import React from 'react'
 
 
 import Hero from '../components/home_components/hero/Hero'
-import Courses from '../components/home_components/hero_courses/Courses'
-import Beneficios from '../components/home_components/Beneficios/Beneficios'
+import Contenido from '../components/home_components/contenido/contenido'
+import CatalogoHome from '../components/home_components/catalogo/catalogo'
 
 const Home = () => {
   return (
     <>
         <Hero />
-        <Beneficios/>
-        <Courses />
+        <Contenido/>
+        <CatalogoHome/>
     </>
   )
 }

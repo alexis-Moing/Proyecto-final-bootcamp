@@ -3,8 +3,8 @@ import { Link, useParams } from 'react-router-dom';
 import { heroCourses } from "../../../constants/hero_courses.js";
 
 const CursoDetalle = ({ total, agregarcarritofunction }) => {
-    console.log(total, agregarcarritofunction, "agregarcarritofunction")
-    const { cursoId } = useParams(); // Obtenemos el ID del curso de la URL
+    // console.log(total, agregarcarritofunction, "agregarcarritofunction")
+    const { cursoId } = useParams(); 
 
     // Buscamos el curso en base a su ID
     const curso = heroCourses.find((course) => course.id === parseInt(cursoId));
