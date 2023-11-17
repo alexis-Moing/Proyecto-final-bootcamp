@@ -1,5 +1,5 @@
 # PROYECTO FINAL BOOTCAMP 
-## CURSOSAPP: PAGINA WEB PARA TOMAR CURSOS EN LINEA
+## CINEPLUS: Aplicacion web de servicios de streaming
 
 Integrantes: 
 - Alexis Morales
