@@ -1,10 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 
 import { RiMailLine, RiLockLine, RiEyeLine, RiEyeOffLine } from "react-icons/ri"
 import useUI from '../../composables/useUI'
 import { Link, useNavigate } from 'react-router-dom'
+import { UserContext } from '../../context/UserContext'
 
 const Login = () => {
+
+    const {storeUser} = useContext(UserContext)
 
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState("")
@@ -12,7 +15,7 @@ const Login = () => {
 
     const { getUsers } = useUI()
     const navigate = useNavigate();
-
+    // const [isAuth, setIsAuth] = useState("")
     const loginfunction = async () => {
         const datauser = {
             "email": email,
@@ -32,7 +35,10 @@ const Login = () => {
             alert(error.details.data.message);
         }
         // Si la respuesta existe y tiene el campo 'success' como verdadero
-
+        // localStorage.setItem('auth', JSON.stringify(true))
+        storeUser(true)
+        // setear la variable global
+        //aqui como tu localstorage se modifica, entonces tienes que meterlo en una estado o variable global y luego traerlo a tu compo0nente header y reemplazar
 
     };
 

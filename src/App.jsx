@@ -12,7 +12,8 @@ import Footer from './layouts/Footer'
 import Carrito from './components/home_components/carrito/carrito'
 import CursoDetalle from './components/home_components/hero_courses/CursoDetalle'
 import cors from "cors"
-
+import { store } from './store/configureheader.js'
+import { UserProvider } from './context/UserContext.jsx'
 const App = () => {
   const [allcourses, setAllCourses] = useState([])
   const [total, setTotal] = useState(0)
@@ -31,44 +32,51 @@ const App = () => {
   return (
     <>
 
-      <BrowserRouter>
-        <Header
-          allcourses={allcourses}
-          countCourses={countCourses}
-          total={total}
-        />
+       <UserProvider>
+          <BrowserRouter>
+            <Header
+              allcourses={allcourses}
+              countCourses={countCourses}
+              total={total}
+            />
 
-        <Routes>
-          
+            <Routes>
+              
 
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/ForgetPassword" element={<ForgetPassword/>} />
-          <Route path="/homeUser" element={<HomeUser/>} />
-          <Route path="*" element={<Error404 />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/ForgetPassword" element={<ForgetPassword/>} />
+              <Route path="/homeUser" element={<HomeUser/>} />
+              <Route path="*" element={<Error404 />} />
 
-          <Route
-            path="/carrito"
-            element={<Carrito allcourses={allcourses} />}
-          />
+              <Route
+                path="/carrito"
+                element={<Carrito allcourses={allcourses} />}
+              />
 
-          <Route
-            total={total}
-            element={<CursoDetalle agregarcarritofunction={agregarcarrito} />}
-            path="/cursoDetalle/:cursoId"
-          />
-        </Routes>
-        
-        <Footer />
+              <Route
+                total={total}
+                element={<CursoDetalle agregarcarritofunction={agregarcarrito} />}
+                path="/cursoDetalle/:cursoId"
+              />
+            </Routes>
+            
+            <Footer />
 
-        cors = {cors({
-          origin:"*",
-          allowedHeaders: ["Content-Type", "Authorization"],
-          allowedMethods: ["GET", "POST", "PUTH", "DELETE"],
-        })}
+            cors = {cors({
+              origin:"*",
+              allowedHeaders: ["Content-Type", "Authorization"],
+              allowedMethods: ["GET", "POST", "PUTH", "DELETE"],
+            })}
 
-      </BrowserRouter>
+          </BrowserRouter>
+
+
+
+      </UserProvider>
+
+
     </>
   )
 }

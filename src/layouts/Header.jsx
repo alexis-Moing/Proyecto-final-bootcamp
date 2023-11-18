@@ -1,22 +1,24 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import LoginButtons from './loginbuttons'
-import logoutHeader from './logoutbuttons'
-
+import LogoutHeader from './logoutbuttons'
+import { useSelector } from 'react-redux'
+import { UserContext } from '../context/UserContext'
 
 // Layout del de la barra de navegacion con links a login, registro, e inicio
 // el link a nosotros esta temporalmente en desuso, hasta ser implementado
-const Header = ({ countCourses, allcourses, total, showHeader }) => {
+const Header = ({ countCourses, allcourses, total}) => {
     console.log(countCourses, allcourses, total, "countCourses")
     const [active, setActive] = useState(false);
-    const [isAuth, setIsAuth] = useState("")
+    // const [isAuth, setIsAuth] = useState( localStorage.getItem('auth') || "false")
     // const auth = useSelector((state) => state.auth)
-
+    const {user} = useContext(UserContext)
 
     // useEffect(() => {
+    //     console.log("holaaaaaaaaaaaaaaaaaaaaaaa")
     //     const auth = localStorage.getItem('auth') || "false";
-        
-    //     if (auth === "false") {
+    //     console.log(auth, "auth")
+    //     if (auth == "false") {
     //         localStorage.setItem('auth', JSON.stringify(false))
 
     //         setIsAuth("false")
@@ -67,12 +69,13 @@ const Header = ({ countCourses, allcourses, total, showHeader }) => {
                         <Link to="/login">Ingresar</Link>
                     </button> */}
 
-                    {isAuth === "false" ? <LoginButtons/> : <logoutHeader/>}
+                    {user ? <LogoutHeader /> : <LoginButtons />}
+                    
                 </div>
             </header>
-        
+
         </>
-    ) ;
+    );
 }
 
 export default Header
