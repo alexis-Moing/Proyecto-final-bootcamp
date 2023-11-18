@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import {Card,  CardHeader, CardBody, CardFooter, Typography, Button, useTabs} from "@material-tailwind/react";
 import useUI from '../composables/useUI';
+import Carrusel from '../components/carrusel/carrusel';
 
 
 const HomeUser = () => {
@@ -91,11 +92,18 @@ const HomeUser = () => {
 
     return (
         <>
+
+            <Carrusel />
+
+            <h2 className="text-white font-semibold flex flex-col text-3xl lg:text-4xl my-10 px-4">
+                Ultimas novedades
+            </h2>
+
             <section className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4'>
                 {apiData.map((item) => (
-                    <Card key={item.id} className=" w-48 sm:w-48 h-80 my-6 border-2 border-[#393ab3] mx-5">
+                    <Card key={item.id} className=" w-48 sm:w-48 h-80 my-6 mx-5 rounded-none">
 
-                        <CardHeader color="blue-gray" className="relative h-56">
+                        <CardHeader color="blue-gray" className="relative h-56 rounded-none">
                             <img src={item.picture} alt="card-image"/>
                         </CardHeader>
 

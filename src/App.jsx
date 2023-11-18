@@ -12,6 +12,11 @@ import CursoDetalle from './components/home_components/hero_courses/CursoDetalle
 import cors from "cors"
 import { store } from './store/configureheader.js'
 import { UserProvider } from './context/UserContext.jsx'
+import ProfilePage from './pages/Prolife.jsx'
+import { initFlowbite } from 'flowbite'
+
+
+
 const App = () => {
   const [allcourses, setAllCourses] = useState([])
   const [total, setTotal] = useState(0)
@@ -46,6 +51,7 @@ const App = () => {
               <Route path="/register" element={<Register />} />
               <Route path="/ForgetPassword" element={<ForgetPassword/>} />
               <Route path="/homeUser" element={<HomeUser/>} />
+              <Route path="/ProfilePage" element={<ProfilePage/>} />
               <Route path="*" element={<Error404 />} />
 
 

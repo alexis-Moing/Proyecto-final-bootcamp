@@ -13,11 +13,11 @@ const LogoutHeader = () => {
     return (
         <>
         <button className=' px-4 py-2  hover:bg-[#8758FF] hover:transition-all  duration-150 hover:font-bold rounded-lg'>
-            <Link to="/register">Perfil</Link>
+            <Link to="/ProfilePage">Perfil</Link>
         </button>
 
         <button onClick={cerrarSesion} className='px-4 py-2  hover:bg-[#8758FF] hover:transition-all  duration-150 hover:font-bold rounded-lg'>
-            cerrar sesion
+           <Link to="/">Cerrar sesion</Link>
         </button>
         </>
     )

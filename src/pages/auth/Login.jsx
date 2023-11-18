@@ -5,8 +5,9 @@ import useUI from '../../composables/useUI'
 import { Link, useNavigate } from 'react-router-dom'
 import { UserContext } from '../../context/UserContext'
 
-const Login = () => {
 
+const Login = () => {
+    
     const {storeUser} = useContext(UserContext)
 
     const [showPassword, setShowPassword] = useState(false)
@@ -27,18 +28,17 @@ const Login = () => {
             console.log('Respuesta de la API:', respuesta, datauser);
             if (respuesta.status == "success") {
                 console.log(respuesta);
+                console.log("respuesta id:", respuesta.user_id)
                 // Redirigir al usuario a la página "/HomeUser"
                 navigate('/HomeUser');
+            
             }
         } catch (error) {
             console.log(error.details);
             alert(error.details.data.message);
         }
-        // Si la respuesta existe y tiene el campo 'success' como verdadero
-        // localStorage.setItem('auth', JSON.stringify(true))
+        
         storeUser(true)
-        // setear la variable global
-        //aqui como tu localstorage se modifica, entonces tienes que meterlo en una estado o variable global y luego traerlo a tu compo0nente header y reemplazar
 
     };
 
