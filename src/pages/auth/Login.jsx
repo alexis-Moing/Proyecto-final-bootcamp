@@ -49,7 +49,7 @@ const Login = () => {
     }
 
     return (
-        <div className="bg-white p-8 rounded-lg md:w-96">
+        <div className="bg-white p-8 rounded-lg md:w-96 mx-5">
             <div className="mb-10">
                 <h1 className="text-3xl uppercase font-bold text-center">Iniciar Sesión</h1>
             </div>

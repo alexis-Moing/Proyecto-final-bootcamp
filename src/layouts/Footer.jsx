@@ -15,24 +15,19 @@ const Footer = () => {
 
             <div className=''>
                 <div className=' flex gap-8 justify-center'>
-                    <h6 className='text-sm'>Condiciones de uso</h6>
+                    <a className='text-sm' href=''>Condiciones de uso</a>
                     <a className='text-sm' href="">Privacidad</a>
                     <a className='text-sm' href="">Anuncios de prensa</a>
                 </div>
 
                 <div className=' flex gap-8 pt-4 justify-center'>
-                    <h6 className='text-sm'>Contactos de prensa</h6>
+                    <a className='text-sm' href=''>Contactos de prensa</a>
                     <a className='text-sm' href="">Gestionar preferencias</a>
                 </div>
                 <div className='flex justify-center text-sm pt-4'>
                     <p className=''>@ 2023 CINEPLUS Direct Latin America. Todos los derechos reservados</p>
                 </div>
 
-                <div className='flex'>
-                    <IconFacebook />
-                    <IconLinkedin />
-                    <IconTwitter />
-                </div>
             </div>
 
         </footer>

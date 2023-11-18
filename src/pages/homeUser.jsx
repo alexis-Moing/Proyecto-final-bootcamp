@@ -2,19 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from "react-router-dom"
 import {Card,  CardHeader, CardBody, CardFooter, Typography, Button, useTabs} from "@material-tailwind/react";
 import useUI from '../composables/useUI';
-import { info } from 'autoprefixer';
 
 
 const HomeUser = () => {
-    
-    const [title, setitle] = useState("")
-    const [description, setdescription] = useState("")
-    const [genre, setgenre] = useState("")
-    const [status, setstatus] = useState("")
-    const [picture, setpicture] = useState("")
-
-    
-
     // const fetchData = async () => {
     //     // const datos = {
     //     //     "title" : title,
@@ -38,37 +28,29 @@ const HomeUser = () => {
     //4.haces un map o un for que la informacion que guardes estará en INFO
 
     const [apiData, setApiData] = useState([])
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const {getContent} = useUI()
 
-    let info;
+    
 
     useEffect(() => {
         console.log('La página ha sido cargada');
         
-        
-
         const fetchData = async () => {
-            
-            // const datos = {
-            //     "title" : title,
-            //     "description": description,
-            //     "genre" : genre
-            // }
     
             try {
                 const data= await getContent('http://127.0.0.1:8000/content')
                 // const data = await response.json()
                 setApiData(data.results)
-                info = data.results;
+                // info = data.results;
                 console.log("datos obtenidos: ", data)
             } catch (error){
                 console.error("error al obtener la data: ", error)
             }
         }
-
         
-
+        fetchData();
+        
         // Ejemplo de carga de datos desde una API (simulada con setTimeout)
         // const fasd = async () => {
         //     try {
@@ -82,7 +64,6 @@ const HomeUser = () => {
         //         console.error('Error al obtener los datos:', error);
         //     }
         // };
-        fetchData();
     
     },[]);
 
@@ -106,26 +87,37 @@ const HomeUser = () => {
         },
         // ... más objetos de tarjetas
     ];
+
+
     return (
         <>
-            {cards.map((item) => (
-                <Card key={item.id} className="mt-6 w-96">
-                    <CardHeader color="blue-gray" className="relative h-56">
-                        <img src={item.picture} alt="card-image" />
-                    </CardHeader>
-                    <CardBody>
-                        <Typography variant="h5" color="blue-gray" className="mb-2">
-                            {item.title}
-                        </Typography>
-                        <Typography>{item.description}</Typography>
-                    </CardBody>
-                    <CardFooter className="pt-0">
-                        <Button>Read More</Button>
-                    </CardFooter>
-                </Card>
-            ))}
+            <section className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4'>
+                {apiData.map((item) => (
+                    <Card key={item.id} className=" w-48 sm:w-48 h-80 my-6 border-2 border-[#393ab3] mx-5">
+
+                        <CardHeader color="blue-gray" className="relative h-56">
+                            <img src={item.picture} alt="card-image"/>
+                        </CardHeader>
+
+                        <CardBody>
+                            <Typography variant="h5" color="blue-gray" className="mt-2 mx-2">
+                                {item.title}
+                            </Typography>
+                            {/* <Typography>{item.description}</Typography> */}
+                        </CardBody>
+
+                        <CardFooter className="pt-0 mx-2 my-2 gap-4 flex">
+                            <img className='' src="src\icons\reproduction.svg" alt="" />
+                            <img src="src\icons\añadir.svg" alt="" />
+                            {/* <Button className='bg-black'>Read More</Button> */}
+                        </CardFooter>
+
+                  </Card>
+                ))}
+            </section>           
+             
         </>
-    )
+    );
 }
 
 export default HomeUser

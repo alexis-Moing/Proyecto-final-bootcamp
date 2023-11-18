@@ -1,11 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import LoginButtons from './loginbuttons'
+import logoutHeader from './logoutbuttons'
+
 
 // Layout del de la barra de navegacion con links a login, registro, e inicio
 // el link a nosotros esta temporalmente en desuso, hasta ser implementado
-const Header = ({ countCourses, allcourses, total }) => {
+const Header = ({ countCourses, allcourses, total, showHeader }) => {
     console.log(countCourses, allcourses, total, "countCourses")
     const [active, setActive] = useState(false);
+    const [isAuth, setIsAuth] = useState("")
+    // const auth = useSelector((state) => state.auth)
+
+
+    // useEffect(() => {
+    //     const auth = localStorage.getItem('auth') || "false";
+        
+    //     if (auth === "false") {
+    //         localStorage.setItem('auth', JSON.stringify(false))
+
+    //         setIsAuth("false")
+    //     } else {
+    //         setIsAuth(localStorage.getItem('auth'))
+    //     }
+
+    // }, [])
+
+    // useEffect(() => {
+
+    //     setIsAuth(localStorage.getItem('auth'));
+    // }, [auth])
 
     return (
         <>
@@ -35,18 +59,20 @@ const Header = ({ countCourses, allcourses, total }) => {
                    
                     </div> */}
 
-                    <button className='px-4 py-2  hover:bg-[#8758FF] hover:transition-all  duration-150 hover:font-bold rounded-lg'>
+                    {/* <button className='px-4 py-2  hover:bg-[#8758FF] hover:transition-all  duration-150 hover:font-bold rounded-lg'>
                         <Link to="/register">Registrarse</Link>
                     </button>
 
                     <button className='px-4 py-2  hover:bg-[#8758FF] hover:transition-all  duration-150 hover:font-bold rounded-lg'>
                         <Link to="/login">Ingresar</Link>
-                    </button>
+                    </button> */}
+
+                    {isAuth === "false" ? <LoginButtons/> : <logoutHeader/>}
                 </div>
             </header>
         
         </>
-    )
+    ) ;
 }
 
 export default Header

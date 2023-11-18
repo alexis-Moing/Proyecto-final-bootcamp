@@ -39,6 +39,7 @@ const App = () => {
         />
 
         <Routes>
+          
 
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -58,7 +59,7 @@ const App = () => {
             path="/cursoDetalle/:cursoId"
           />
         </Routes>
-
+        
         <Footer />
 
         cors = {cors({
