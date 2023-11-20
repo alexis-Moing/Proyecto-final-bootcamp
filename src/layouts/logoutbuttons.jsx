@@ -12,6 +12,15 @@ const LogoutHeader = () => {
 
     return (
         <>
+
+        <button className=' px-4 py-2 no-underline hover:underline hover:transition-all  duration-150 hover:font-semibold rounded-lg'>
+            <Link className='flex gap-1' to="/Busqueda">
+                Busqueda
+                <img className='hover:transition-all duration-150' src="src\icons\busqueda.svg" alt="" />
+            </Link>
+            
+        </button>
+
         <button className=' px-4 py-2  hover:bg-[#8758FF] hover:transition-all  duration-150 hover:font-bold rounded-lg'>
             <Link to="/ProfilePage">Perfil</Link>
         </button>

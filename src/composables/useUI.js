@@ -53,6 +53,15 @@ const useUI = () => {
         }
     }
 
+    const userProfile = async () => {
+        try {
+            const response = await asistenciaApi.get("/users/profile/me")
+            return response.data 
+        } catch (error) {
+            console.error("error al obtener data del usuario: ", error)
+        }
+    }
+
 
 
     return {
@@ -60,7 +69,8 @@ const useUI = () => {
         postUsers,
         getUsersbyID,
         ResetPassword,
-        getContent
+        getContent,
+        userProfile
     }
 }
 export default useUI

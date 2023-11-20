@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const asistenciaApi = axios.create({
-    baseURL: "https://nfdfz6vz-8000.brs.devtunnels.ms",
+    baseURL: "http://127.0.0.1:8000",
 })
 
 export default asistenciaApi

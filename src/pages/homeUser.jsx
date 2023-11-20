@@ -3,6 +3,10 @@ import { Link, useNavigate } from "react-router-dom"
 import {Card,  CardHeader, CardBody, CardFooter, Typography, Button, useTabs} from "@material-tailwind/react";
 import useUI from '../composables/useUI';
 import Carrusel from '../components/carrusel/carrusel';
+//------------------------------------------
+// import { Card } from 'flowbite-react';
+
+
 
 
 const HomeUser = () => {
@@ -28,9 +32,10 @@ const HomeUser = () => {
     //3. INSERTAS TUS DATOS EN TU VARIALBE QU DEBE SER UN OBJETO  const [INFO, setINFO] = useState([])
     //4.haces un map o un for que la informacion que guardes estará en INFO
 
+    
     const [apiData, setApiData] = useState([])
-    // const navigate = useNavigate()
     const {getContent} = useUI()
+   
 
     
 
@@ -101,26 +106,27 @@ const HomeUser = () => {
 
             <section className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4'>
                 {apiData.map((item) => (
-                    <Card key={item.id} className=" w-48 sm:w-48 h-80 my-6 mx-5 rounded-none">
+                    <Card key={item.id} className=" w-48 sm:w-48 h-72 my-6 mx-5 rounded-none bg-[#373636] transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-200">
 
-                        <CardHeader color="blue-gray" className="relative h-56 rounded-none">
+                        <CardHeader color="blue-gray" className="relative h-56 rounded-none mx-0">
                             <img src={item.picture} alt="card-image"/>
                         </CardHeader>
 
                         <CardBody>
-                            <Typography variant="h5" color="blue-gray" className="mt-2 mx-2">
+                            <Typography variant="h5" color="blue-gray" className="mt-2 mx-2 text-white">
                                 {item.title}
                             </Typography>
                             {/* <Typography>{item.description}</Typography> */}
                         </CardBody>
 
                         <CardFooter className="pt-0 mx-2 my-2 gap-4 flex">
-                            <img className='' src="src\icons\reproduction.svg" alt="" />
-                            <img src="src\icons\añadir.svg" alt="" />
+                            <Link><img className='' src="src\icons\reproduction.svg" alt="" /></Link>
+                            <Link><img src="src\icons\añadir.svg" alt="" /></Link>
                             {/* <Button className='bg-black'>Read More</Button> */}
                         </CardFooter>
 
-                  </Card>
+                    </Card>
+
                 ))}
             </section>           
              

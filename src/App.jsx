@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import "./App.css"
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from "../src/pages/Home"
 import Header from './layouts/Header'
@@ -14,6 +15,7 @@ import { store } from './store/configureheader.js'
 import { UserProvider } from './context/UserContext.jsx'
 import ProfilePage from './pages/Prolife.jsx'
 import { initFlowbite } from 'flowbite'
+import Busqueda from './pages/busqueda.jsx'
 
 
 
@@ -52,6 +54,7 @@ const App = () => {
               <Route path="/ForgetPassword" element={<ForgetPassword/>} />
               <Route path="/homeUser" element={<HomeUser/>} />
               <Route path="/ProfilePage" element={<ProfilePage/>} />
+              <Route path="/Busqueda" element={<Busqueda/>}/>
               <Route path="*" element={<Error404 />} />
 
 

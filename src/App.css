@@ -1,0 +1,16 @@
+
+.inputBusqueda {
+    box-sizing: border-box;
+    width: 100%;
+    margin-left: 14px;
+    margin-right: 4px;
+    padding-right: 4px;
+    background-color: white;
+    border-color: #8758FF;
+    border-width: 3px;
+    border-radius: 6px;
+    font-size: medium;
+    line-height: 1;
+    font-weight: bold;
+    height: 80px;
+}
